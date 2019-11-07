@@ -6,8 +6,9 @@ public class NoticeService {
 	
 	private NoticeDAO noticeDAO;
 	
-	public NoticeService() {
-		noticeDAO = new NoticeDAO();
+	
+	public void setNoticeDAO(NoticeDAO noticeDAO) {
+		this.noticeDAO = noticeDAO;
 	}
 	//글 전체 조회
 	public List<NoticeDTO> noticeList() throws Exception{
