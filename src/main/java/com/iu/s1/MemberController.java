@@ -5,6 +5,7 @@ import java.lang.ProcessBuilder.Redirect;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.MvcNamespaceHandler;
 
@@ -51,6 +52,7 @@ public class MemberController {
 	
 	//memberjoin-post
 	@RequestMapping(value = "memberJoin", method = RequestMethod.POST)
+	
 	public ModelAndView memberJoin(MemberDTO memberDTO) {
 		int result = 1;
 		
