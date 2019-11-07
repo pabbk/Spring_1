@@ -2,13 +2,33 @@ package com.iu.s1.notice;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import oracle.jdbc.proxy.annotation.SetDelegate;
+
+@Service
 public class NoticeService {
+	
 	
 	private NoticeDAO noticeDAO;
 	
-	public NoticeService() {
-		noticeDAO = new NoticeDAO();
+	
+	@Inject
+	public NoticeService(NoticeDAO noticeDAO) {
+		
+		this.noticeDAO = noticeDAO;
 	}
+	
+	//@Inject
+	public void setNoticeDAO(NoticeDAO noticeDAO) {
+		this.noticeDAO = noticeDAO;
+	
+	}
+	
+	
 	//글 전체 조회
 	public List<NoticeDTO> noticeList() throws Exception{
 		List<NoticeDTO> ar = noticeDAO.noticeList();
